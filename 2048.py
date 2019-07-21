@@ -52,7 +52,7 @@ class GameBoard():
         else:
             return False
 
-    def left_board_translation(self):
+    def upward_board_translation(self):
         for y in range(len(self._board)):
             for x in range(len(self._board[0])):
                 if(y==0):
@@ -87,19 +87,19 @@ class GameBoard():
 
     def user_input(self,userInput):
         if(userInput=="UP" or userInput=="U"):
-            self.left_board_translation()
+            self.upward_board_translation()
             return True
         elif(userInput=="DOWN" or userInput=="D"):
             self._board=self.rotate_array(self._board)
             self._board=self.rotate_array(self._board)
-            self.left_board_translation()
+            self.upward_board_translation()
             self._board=self.rotate_array(self._board)
             self._board=self.rotate_array(self._board)
 
             return True
         elif(userInput=="LEFT" or userInput=="L"):
             self._board=self.rotate_array(self._board)
-            self.left_board_translation()
+            self.upward_board_translation()
             self._board=self.rotate_array(self._board)
             self._board=self.rotate_array(self._board)
             self._board=self.rotate_array(self._board)
@@ -108,7 +108,7 @@ class GameBoard():
             self._board=self.rotate_array(self._board)
             self._board=self.rotate_array(self._board)
             self._board=self.rotate_array(self._board)
-            self.left_board_translation()
+            self.upward_board_translation()
             self._board=self.rotate_array(self._board)
             return True
         else:
